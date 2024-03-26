@@ -153,7 +153,27 @@
 
 На рисунке (\ref{fig:Ris_of_facility}) изображено устройство калориметра.
 
-Запишем также иные параметры экспериментальной установки:
+\begin{center}
+	\subsection*{Погрешности}
+\end{center}
+
+\begin{itemize}
+	\item $\sigma_T = 0,01 ^{\circ}C $
+	\item $\sigma_{T_{K}} = 0,01 ^{\circ}C $
+	\item $\sigma_U = 0,01 \; \text{В}$
+	\item $\sigma_I = 0,0001 \; \text{А}$
+	\item $\varepsilon_C = \sqrt{(\frac{\sigma_I}{I})^2 + (\frac{\sigma_T}{T})^2 + (\frac{\sigma_U}{U})^2 + (\frac{\sigma_{T_K}}{T_K})^2} = 3,5 \; \%$
+\end{itemize}
+
+
+\begin{center}
+	\section*{Ход работы}
+\end{center}
+
+
+\begin{center}
+	Параметры экспериментальной установки:
+\end{center}
 
 \begin{table}[h!]
 	\centering
@@ -166,7 +186,73 @@
 	\label{tab:param_of_facility}
 \end{table}
 
-$$R_{0} = 17,84 \pm 0,01 \, \text{Ом}, \quad t_{0} = 24,4^{\circ} \pm 1 ^{\circ} C$$
+$$R_{0} = 17,84 \pm 0,01 \, \text{Ом}, \quad t_{0} = 21,9^{\circ} \pm 1 ^{\circ} C$$
 
 $$ U = 36 \, \text{В}, \, I = 0,3 \, \text{А}, \, P = 10,8 \, \text{Вт} $$
+
+\centering
+Построим графики зависимости $R(t)$ для полученных данных (Рис. 3).
+
+\begin{figure}[ht]
+
+	\subcaptionbox*{Нагрев калориметра}[.45\linewidth]{%
+    \includegraphics[width=\linewidth]{img/Figure_1.png}%
+  }%
+  \hfill
+  \subcaptionbox*{Нагрев титана}[.45\linewidth]{%
+    \includegraphics[width=\linewidth]{img/Figure_2.png}%
+  }
+
+\end{figure}
+
+Экстраполируем полученные зависимости полиномом второй степени до значений $R = R_{\text{к}}$ и вычислим значения $(\frac{dR}{dt})_{T = T_{\text{к}}}$ с использованием полученной формулы.
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		& Уравнение экстраполяции                     & $R_{\text{к}}$, Ом     & $(dR/dt)_{R_{\text{к}}}$, Ом/с     \\ \hline
+		Калориметр & $y = -0,0000001x^2 - 0,0008x + 17,589$ & 18,34 & 0,00080 \\ \hline
+		Титан      & $y = -0,0000001x^2 - 0,0006x + 17,699$ & 18,41 & 0,00059 \\ \hline
+	\end{tabular}
+	\caption{Экстраполяция}
+\end{table}
+
+Вычисляем теплоемкость по формуле выше:
+
+\begin{table}[H]
+	\begin{center}
+		\scalebox{0.85}{
+		\begin{tabular}{|l|l|l|}
+			\hline
+			& Теплоемкость, Дж/кг$\cdot$К & Тепл. без калориметра, Дж/кг$\cdot$К \\ \hline
+			Калориметр & 212,65  & -                                           \\ \hline
+			Титан      & 772,40  & 559,75                   			       \\ \hline
+		\end{tabular}}
+	\end{center}
+	\caption{Результат вычислений теплоемкости}
+\end{table}
+
+\begin{center}
+	Итого:
+
+\[ \boxed{	C_{\text{титан}} = (559,75 \pm 19,51) \; \frac{\text{Дж}}{\text{кг}\cdot\text{К}}}\quad\]
+\end{center}
+
+\begin{center}
+	\subsection*{Обсуждение резльтатов}
+\end{center}
+
+В пределах погрешности удельная теплоемкость титана $C_{\text{титан}}$ близка к табличному значению $C_{\text{титан}_0} = 523 \frac{\text{кДж}}{(\text{кг}\cdot\text{K})}$
+
+\section*{Выводы}
+
+\begin{itemize}
+	\item В ходе работы были измерены теплоемкости калориметра, образца из титана.
+	
+	\item Основной вклад в (не)точность результата внесла погрешность экстраполяции.
+	
+	\item Экспериментально проверена работоспособность предложенной методики измерения.
+\end{itemize}
+
 \end{document}
