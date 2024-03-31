@@ -1,0 +1,15 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Цель работы}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}В работе используются:}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Оборудование и их систематические погрешности}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Теоретические сведения}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Экспериментальная установка}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Ход работы}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Знакомство с экспериментальной установкой}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Закрепление тела в рамке}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Определение амплитуды крутильных колебаний}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Измерение периодов колебаний для пустой рамки и тел в различных положениях}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Измерение геометрических размеров и расчет главных моментов инерции параллелепипеда}{11}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Построение сечений эллипсоида инерций главными плоскостями}{12}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Вывод}{13}{section.4}%
