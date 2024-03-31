@@ -5,3 +5,5 @@
 *.idx
 *.toc
 *.fdb_latexmk
+*.gz
+*.Identifier
