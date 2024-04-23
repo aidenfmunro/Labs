@@ -15,9 +15,9 @@ def mapping(x, k, b):                #Function of approximating give to curve_fi
     return b + k*x
 
 plt.figure(figsize=(11,11))                                #Create graphic in matplotlib  
-plt.title(r"зависимость $h(t)$")  #Labels of coordinates 
-plt.xlabel(r"t, $^{\circ}$C")
-plt.ylabel(r"$h$, дел")
+plt.title(r"зависимость U/F(T)")  #Labels of coordinates 
+plt.xlabel(r"T, $K$")
+plt.ylabel(r"U/F, $\frac{мДж}{м^2}$")
 
 #-------------------------------------------------------------------------------------
 
@@ -50,7 +50,8 @@ for i in range(len(x)):
 #                 """"""""""""""""""""""
 
 plt.plot(x, y, 'gs', label='')    #triangles with measurments
-plt.plot(x, y_fit, color = 'b', label = f"Прямая с аппроксимацией) " r'' f", k = {k:.3f}, a = {b:.3f}") #approximating praphic
+plt.plot(x, y_fit, color = 'b', label = f"Прямая с аппроксимацией " r'' f", k = {k:.3f}, a = {b:.3f}") #approximating praphic
+plt.errorbar(x, y, yerr=0.15, xerr=0.2)
                                                                                                                                   #
 #----------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------
