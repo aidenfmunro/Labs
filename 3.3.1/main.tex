@@ -156,6 +156,51 @@
 
 \newpage
 \;
+\newline
 \subsection*{Ход работы}
+
+Снимем зависимость анодного тока от тока через соленоид для различных значений $V_a$.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[]{{\includegraphics[width=0.5\textwidth]{data/magnet/graphs/70V.png}}}
+    \hfill
+    \subfloat[]{{\includegraphics[width=0.5\textwidth]{data/magnet/graphs/80V.png}}}
+
+    \subfloat[]{{\includegraphics[width=0.5\textwidth]{data/magnet/graphs/90V.png}}}
+    \hfill
+    \subfloat[]{{\includegraphics[width=0.5\textwidth]{data/magnet/graphs/100V.png}}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[]{{\includegraphics[width=0.5\textwidth]{data/magnet/graphs/110V.png}}}
+    \hfill
+    \subfloat[]{{\includegraphics[width=0.5\textwidth]{data/magnet/graphs/120V.png}}}
+\end{figure}
+
+Теперь запишем все в один график.
+
+\begin{center}
+\includegraphics[width = \textwidth]{data/magnet/graphs/all.png}\\
+\textbf{График 5. } Все графики.
+\end{center}
+
+По этому графику мы получаем зависимость $B_{\text{кр}}^2$ от $V_a$.
+
+\begin{center}
+\includegraphics[width = \textwidth]{data/magnet/graphs/B_critical.png}\\
+\textbf{График 6.} График зависимости $B_{\text{кр}}^2$ от $V_a$.
+\end{center}
+
+\begin{equation}
+    k_{B_{\text{кр}}^2/U_a} = (0.034 \pm 0.010) \cdot 10^{-5} \frac{\text{Тл}^2}{\text{В}} \; (\varepsilon = 29 \%)
+\end{equation}
+
+По этим данным мы получаем:
+\begin{equation}
+    \dfrac{e}{m} = (1,6 \pm 0,5) \cdot 10^{11} \; \frac{\text{Кл}}{\text{кг}}
+\end{equation}
+Что так же близко в пределах погрешности к табличному результату.
 
 \end{document}
