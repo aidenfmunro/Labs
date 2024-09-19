@@ -34,8 +34,8 @@ for count, file_path in enumerate(csv_files, start=0):
     print(f"Обрабатываю файл: {file_name}")
     print(data.columns)
 
-    x_label    = "B, мТ"
-    xerr_label = "\sigma_B, мТ"
+    x_label    = "B, мТл"
+    xerr_label = "\sigma_B, мТл"
     y_label    = "I_a, мкА"
     yerr_label = "\sigma_{I_a}, мкА"
 
