@@ -49,7 +49,7 @@ def main():
     v120_magnetic_current = data_magnet.iloc[2:, 10] # 120
     v120_anode_current    = data_magnet.iloc[2:, 11]
 
-    print(.to_numpy() * 100)
+    print(v120_anode_current.to_numpy() * 100)
     print(v120_anode_current)
 
     plt.plot(v70_magnetic_current, v70_anode_current)
