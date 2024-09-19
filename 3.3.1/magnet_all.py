@@ -62,15 +62,18 @@ for count, file_path in enumerate(csv_files, start=0):
     # Аппроксимация данных методом наименьших квадратов
     params, params_covariance = curve_fit(linear_func, x_data, y_data)
 
-    plt.plot(x_data, y_data, color='blue')
+    color  = ['blue', 'red', 'green', 'gray', 'purple', 'pink']
+    marker = ['v', 's', 'd', '*', 'p', 'h']
+
+
+    plt.plot(x_data, y_data, color=color[count], marker=marker[count], label=file_name)
 
     # Построение графика с погрешностями
-    plt.errorbar(	  x_data
+    plt.errorbar(	x_data
                  	, y_data
                     , yerr=y_err
                     , xerr=x_err
                     , fmt=''
-                    , label='Данные'
                     , color='red'
                     , ecolor='black'
                     , elinewidth=1
@@ -99,15 +102,14 @@ for count, file_path in enumerate(csv_files, start=0):
     # Оформление графика
     plt.xlabel('$'+x_label+'$')
     plt.ylabel('$'+y_label+'$')
-    plt.title(file_name)
-    # plt.legend()
 
+    plt.legend()
     # Сохранение графика в файл с таким же названием, как у CSV-файла
-    output_file = f"{output_dir}/{file_name}_colored.png"
-    plt.savefig(output_file)
+output_file = f"{output_dir}/all.png"
+plt.savefig(output_file)
 
     # Очистка текущей фигуры для построения следующего графика
-    plt.clf()
+    # plt.clf()
 
     # Выводим сообщение о сохранении графика
-    print(f"График для {file_name} сохранён как: {output_file}")
+print(f"График для {file_name} сохранён как: {output_file}")
