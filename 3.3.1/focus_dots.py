@@ -7,8 +7,10 @@ import glob
 from matplotlib.ticker import (AutoMinorLocator, MultipleLocator)
 
 # Директории для CSV файлов и для сохранения графиков
-data_dir = 'data'
+data_dir = 'data/focus'
 output_dir = 'data/focus/graphs'
+
+file_path = 'data/focus/descend_dots.csv'
 
 # Проверяем существование директории для графиков и создаем, если её нет
 os.makedirs(output_dir, exist_ok=True)
@@ -21,9 +23,8 @@ def linear_func(x, a, b):
     return a * x + b
 
 # Обрабатываем каждый CSV-файл
-# Извлекаем имя файла без расширения
 
-file_path = 'data/focus/descend_calibrate.csv'
+# Извлекаем имя файла без расширения
 file_name = os.path.splitext(os.path.basename(file_path))[0]
 
 # Чтение данных из CSV-файла
@@ -33,10 +34,9 @@ data = pd.read_csv(file_path)
 print(f"Обрабатываю файл: {file_name}")
 print(data.columns)
 
-x_label    = "I, A"
-xerr_label = "\sigma_I, A"
-y_label    = "B, мТ"
-yerr_label = "\sigma_B, мТ"
+y_label    = "B, мТл"
+yerr_label = "\sigma_B, мТл"
+x_label    = "n"
 
 # Значения x и y
 x_data = data[x_label]
@@ -50,22 +50,24 @@ if yerr_label in data.columns:
 else:
     y_err = 666
 
-if xerr_label in data.columns:
-    print("found x errors:")
-    x_err = data[xerr_label]
-    for elem in x_err:
-        print(x_err)
-else:
-    x_err = 666
+# if xerr_label in data.columns:
+#     print("found x errors:")
+#     x_err = data[xerr_label]
+#     for elem in x_err:
+#         print(x_err)
+# else:
+#     x_err = 666
 
 # Аппроксимация данных методом наименьших квадратов
 params, params_covariance = curve_fit(linear_func, x_data, y_data)
 
+print(params)
+
+
 # Построение графика с погрешностями
-plt.errorbar(	x_data
+plt.errorbar(	  x_data
                 , y_data
                 , yerr=y_err
-                , xerr=x_err
                 , fmt=''
                 , label='Данные'
                 , color='red'
@@ -84,7 +86,7 @@ plt.plot(x_data, linear_func(x_data, params[0], params[1]), label='Аппрок�
 # plt.ylim(bottom=0)
 
 # Настройка меток на осях
-plt.gca().xaxis.set_major_locator(MultipleLocator(0.1))   # Основные метки через 1 единицу по оси X
+plt.gca().xaxis.set_major_locator(MultipleLocator(1))   # Основные метки через 1 единицу по оси X
 plt.gca().xaxis.set_minor_locator(AutoMinorLocator(4))  # Дополнительные метки (4 на каждый интервал)
 
 plt.gca().yaxis.set_major_locator(MultipleLocator(1)) # Основные метки через 100 единиц по оси Y
@@ -99,7 +101,7 @@ plt.grid(True, which='both', linestyle='--', linewidth=0.5)
 # Оформление графика
 plt.xlabel('$'+x_label+'$')
 plt.ylabel('$'+y_label+'$')
-plt.title("calibrate descending")
+plt.title("descend dots")
 # plt.legend()
 
 # Сохранение графика в файл с таким же названием, как у CSV-файла
